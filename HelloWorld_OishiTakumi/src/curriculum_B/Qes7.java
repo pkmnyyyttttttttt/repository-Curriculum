@@ -44,9 +44,6 @@ public class Qes7 {
 			int sumScience = 0;
 			// 社会の合計点数を受け取る変数を宣言
 			int sumSociety = 0;
-					
-					
-					
 			// 全体点数合計を受け取る変数を宣言
 			int scoreTotal = 0;
 			// 個人平均を受け取る変数を宣言
@@ -61,30 +58,31 @@ public class Qes7 {
 			double averageScience;
 			// 社会平均を受け取る変数を宣言
 			double averageSciety;
-						
+			// 英語の点数を受ける変数scoreEnglishを宣言
+			int scoreEnglish = 0;
+			// 数学の点数を受ける変数scoreMathを宣言
+			int scoreMath = 0;
+			// 理科の点数を受ける変数scoreScienceを宣言
+			int scoreScience = 0;
+			// 社会の点数を受ける変数scoreScietyを宣言
+			int scoreSciety = 0;
+			
+			// ループ回数の変数countを宣言
+			int count = 0; 
 					
 			// 各生徒の4教科合計点数を受け取るList:scoreListを宣言
 			List<Integer> scoreList = new ArrayList<>();
 			
 			
-			// ループ回数の変数countを宣言
-			int count = 0; 
-			
-			
 			// 生徒の人数分繰り返し処理
 			do {
 						
-				// 英語の点数を受ける変数scoreEnglishを宣言
-				int scoreEnglish = 0;
-				// 数学の点数を受ける変数scoreMathを宣言
-				int scoreMath = 0;
-				// 理科の点数を受ける変数scoreScienceを宣言
-				int scoreScience = 0;
-				// 社会の点数を受ける変数scoreScietyを宣言
-				int scoreSciety = 0;
-				// 個人点数合計
+				/* 個人点数合計を受け取る変数sumPersonalを宣言
+				 * sumPersonalはscoreListに追加のため
+				 * ループごとに初期化させる
+				 */
 				int sumPersonal = 0;
-						
+				
 				// 英語の点数の入力を要求する処理
 				System.out.print(count+1 + "人目の『" + subjects[0] + "』の点数を入力してください : ");
 				scoreEnglish = scanner.nextInt();
@@ -129,7 +127,7 @@ public class Qes7 {
 				
 				count++;
 				
-			}while(count < numberStudents);
+			} while(count < numberStudents);
 			
 			
 			// 生徒の人数分平均点を表示する処理
