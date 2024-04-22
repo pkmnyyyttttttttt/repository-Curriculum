@@ -12,7 +12,6 @@ public class Main {
 		// インスタンス生成
 		Process process = new Process();
 		
-		// インスタンス生成
 		Parameter parameter = new Parameter();
 		
 		

@@ -56,7 +56,8 @@ public class Process {
 	public int getDefence() {
 		return this.defence;
 	}
-	
+
+
 }
 
 
