@@ -12,6 +12,7 @@ public class Main {
 		// インスタンス生成
 		Process process = new Process();
 		
+		// インスタンス生成
 		Parameter parameter = new Parameter();
 		
 		
@@ -53,6 +54,7 @@ class Parameter extends Process {
 		System.out.println("防御力：" + this.getDefence());
 		System.out.println("");
 		System.out.println("さあ冒険に出かけよう！");
+		
 	}
 				
 }

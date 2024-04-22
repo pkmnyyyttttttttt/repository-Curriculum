@@ -57,7 +57,6 @@ public class Process {
 		return this.defence;
 	}
 	
-	
 }
 
 
