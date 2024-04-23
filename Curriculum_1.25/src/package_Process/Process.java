@@ -2,10 +2,14 @@ package package_Process;
 
 
 import java.util.Random;
+import java.util.Scanner;
 
 
 // 親クラス
 public class Process {
+	
+	// キーボードから入力を受けるためのscanner
+	Scanner scanner = new Scanner(System.in);
 	
 	// フィールド変数の宣言
 	private String name;
@@ -20,6 +24,8 @@ public class Process {
 	
 	// コンストラクタ
 	public Process() {
+		// 名前入力処理
+		this.name = scanner.nextLine();
 	}
 		
 	// nameのセッター

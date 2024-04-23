@@ -9,20 +9,18 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		
 		// インスタンス生成
 		Process process = new Process();
 		
 		Parameter parameter = new Parameter();
 		
 		
-		// 任意の名前を入力
-		process.setName("a");
-		
 		// null判定処理
-		Optional<String> value1 = Optional.ofNullable(process.getName());
+		Optional<String> value = Optional.ofNullable(process.getName());
 		
 		// 値がnullでないときにコンソール出力する処理
-		if (value1.isPresent()) {
+		if (value.isPresent()) {
 			
 			System.out.println("こんにちは「" + process.getName() + "」さん");
 			
