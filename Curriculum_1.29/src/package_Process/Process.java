@@ -15,10 +15,18 @@ public class Process {
 	// フィールド変数の宣言
 	private String[] numberLank;
 	private String imfoPre;
+	private String sortList;
 	private String namePrefecture;
 	private String prifectualCapital;
 	private double areaPrefecture;
 	private int[] intArray;
+	
+	private Integer[] integerArray;
+	
+	
+	public Integer[] getIntegerArray() {
+		return this.integerArray;
+	}
 	
 	// animalCategoryのゲッター
 	public String[] getNumberLank() {
@@ -50,6 +58,11 @@ public class Process {
 		return this.imfoPre;
 	}
 	
+	// sortListのゲッター
+	public String getSortList() {
+		return this.sortList;
+	}
+	
 	
 	// 数字と都道府県の情報を紐付ける処理
 	Map<Integer,String> exArea = new HashMap<Integer,String>() {
@@ -78,17 +91,48 @@ public class Process {
 		System.out.println("コンソールに文字を入力してください");
 		this.numberLank = scanner.nextLine().split(",");
 		
+		// 昇順・降順の入力要求する処理
+		do {
+			
+			System.out.println("昇順・降順どちらかを入力してください");
+			this.sortList = scanner.nextLine();
+			
+		} while (!(getSortList().equals("昇順")) && !(getSortList().equals("降順")));
+		
 	}
 	
-	
+	// 配列を変換する処理
 	public void storeArray() {
 		
 		// 配列をString型からint型に変換する処理
 		this.intArray = Stream.of(numberLank).mapToInt(Integer::parseInt).toArray();
 		
 		// 配列の値を昇順に並び替える処理
-		Arrays.sort(getIntArray());
+		if (getSortList().equals("昇順")) {
+			
+			Arrays.sort(getIntArray());
+			
+		} 
 		
+		// 配列の値を降順に並び替える処理
+		if (getSortList().equals("降順")) {
+			
+			for (int k = 0; k < getIntArray().length; k++) {
+				for (int l = 0; l < getIntArray().length-k-1; l++) {
+					if(getIntArray()[l] < getIntArray()[l+1]) {
+						int smp = getIntArray()[l];
+						getIntArray()[l] = getIntArray()[l+1];
+						getIntArray()[l+1] = smp;
+					}
+				}
+			}
+			
+		}
+		
+	}
+	
+	// 紐付けられている都道府県の情報の処理
+	public void distributionDate() {
 		
 		for (int i = 0; i < this.intArray.length; i++) {
 			
@@ -112,7 +156,6 @@ public class Process {
 			
 		}
 	}
-	
 	
 	// 都道府県名・県庁所在地・面積を表示する処理
 	public void displayPrefectures() {

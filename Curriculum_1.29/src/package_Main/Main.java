@@ -9,8 +9,12 @@ public class Main {
 		// インスタンスの生成
 		Process process = new Process();
 		
+		
 		// 処理の呼び出し
 		process.storeArray();
+		
+		// 処理の呼び出し
+		process.distributionDate();
 	}
 
 }
