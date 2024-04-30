@@ -3,7 +3,8 @@ package package_Person;
 public class Person {
 	
 	// インスタンスフィールドを定義
-	public String name;
+	public String firstName;
+	public String lastName;
 	public int age;
 	public double height;
 	public double weight;
@@ -11,14 +12,27 @@ public class Person {
 	
 	
 	// コンストラクタを定義
-	public Person(String name, int age, double height, double weight) {
+	public Person(String firstName, String lastName,int age, double height, double weight) {
 		
-		this.name = name;
+		this.firstName = firstName;
+		// recieveLastnameの呼び出し
+		recieveLastname(lastName);
 		this.age = age;
 		this.height = height;
 		this.weight = weight;
-		count++;
 		
+		
+	}
+	
+	// lastNameの値を引数で受け取るコンストラクタを定義
+	public void recieveLastname(String lastName) {
+		Person.count++;
+		this.lastName = lastName;
+	}
+	
+	
+	public String fullName() {
+		return this.firstName + this.lastName;
 	}
 	
 	// BMIを計算する処理
@@ -28,7 +42,7 @@ public class Person {
 	
 	// 紹介文を表示する処理
 	public void print() {
-		System.out.println("名前は" + this.name + "です");
+		System.out.println("名前は" + this.fullName() + "です");
 		System.out.println("年は" + this.age + "才です");
 		System.out.println("BMIは" + Math.floor(bmi()) + "です");
 		
