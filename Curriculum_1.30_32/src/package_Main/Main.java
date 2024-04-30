@@ -1,7 +1,10 @@
 package package_Main;
 
 
+import package_Person.Bicycle;
+import package_Person.Car;
 import package_Person.Person;
+
 
 public class Main {
 
@@ -18,8 +21,30 @@ public class Main {
 		// 合計人数を表示するメソッドの呼び出し
 		Person.printCount();
 		
+		System.out.println("");
 		
-	
+		
+		// インスタンスの生成
+		Car car = new Car();
+		
+		Bicycle bicycle = new Bicycle();
+		
+		// ownerの設定
+		car.setOwner(person1.fullName());
+		
+		bicycle.setOwner(person2.fullName());
+		
+		// コンソール出力
+		System.out.println(car.getOwner());
+		
+		System.out.println(bicycle.getOwner());
+		
+		System.out.println("");
+		
+		// buyメソッドの呼び出し
+		person1.buy(car);
+		
+		person2.buy(bicycle);
 	}
 
 }
