@@ -29,12 +29,14 @@ public class Person {
 	// 紹介文を表示する処理
 	public void print() {
 		System.out.println("名前は" + this.name + "です");
-		System.out.println("年は" + this.age + "です");
+		System.out.println("年は" + this.age + "才です");
 		System.out.println("BMIは" + Math.floor(bmi()) + "です");
+		
+		System.out.println("");
 	}
 	
 	// 合計人数を表示する処理
-	public void personCount() {
+	public static void printCount() {
 		System.out.println("合計" + Person.count + "人です");
 	}
 }

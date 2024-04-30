@@ -7,17 +7,16 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Person person = new Person("鈴木太郎", 20, 1.7,60);
+		Person person1 = new Person("鈴木太郎", 20, 1.7,60);
+		// メソッドの呼び出し
+		person1.print();
 		
-		System.out.println(person.name);
-		System.out.println(person.age);
-		System.out.println(person.height);
+		Person person2 = new Person("山田花子", 22, 1.5,40);
+		// メソッドの呼び出し
+		person2.print();
 		
-		
-		//メソッドの呼び出し
-		person.print();
-		
-		person.personCount();
+		// 合計人数を表示するメソッドの呼び出し
+		Person.printCount();
 		
 		
 	
