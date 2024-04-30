@@ -30,7 +30,7 @@ public class Person {
 	public void print() {
 		System.out.println("名前は" + this.name + "です");
 		System.out.println("年は" + this.age + "です");
-		System.out.println("BMIは" + String.format("%.2f",bmi()) + "です");
+		System.out.println("BMIは" + Math.floor(bmi()) + "です");
 	}
 	
 	// 合計人数を表示する処理
